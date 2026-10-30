@@ -19,3 +19,15 @@
 -- -- 4. То же место на тот же сеанс второй раз: ошибка UNIQUE
 -- -- expect: error unique
 -- INSERT INTO tickets (session_id, seat_id, price) VALUES (1, 1, 300);
+
+-- 1. Нарушение UNIQUE: пытаемся вставить клиента с уже существующим телефоном
+-- expect: error unique
+INSERT INTO clients (full_name, phone) VALUES ('Дубль', '+79161234567');
+
+-- 2. Нарушение CHECK: пытаемся создать улику с недопустимым типом
+-- expect: error check
+INSERT INTO evidence (description, evidence_type, case_id) VALUES ('Странная улика', 'Неизвестный тип', 1);
+
+-- 3. Нарушение FOREIGN KEY: пытаемся создать дело для несуществующего клиента
+-- expect: error fk
+INSERT INTO cases (title, description, client_id, detective_id) VALUES ('Дело-призрак', 'Описание', 999, 1);
