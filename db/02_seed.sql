@@ -74,3 +74,10 @@ INSERT INTO interrogations (detective_id, suspect_id, case_id, summary) VALUES
 (8, 8, 8, 'Шантажист выдвинул требования.'),
 (9, 9, 9, 'Свидетель заметил подозрительную машину.'),
 (10, 10, 10, 'Партнер отказался давать показания без адвоката.');
+
+-- Добавляем подозреваемого-сироту для проверки LEFT JOIN (Лаба 2)
+INSERT INTO suspects (full_name, status, case_id) VALUES ('Сбежавший подозреваемый', 'Подозреваемый', 1);
+
+-- Добавляем дело без улик для проверки NOT EXISTS в Лабе 2
+INSERT INTO cases (title, description, status, client_id, detective_id) 
+VALUES ('Дело без улик', 'Пока нет ни одной улики', 'Открыто', 2, 3);
