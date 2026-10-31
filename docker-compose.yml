@@ -11,7 +11,7 @@ services:
       TZ: Europe/Moscow
       PGTZ: Europe/Moscow
     ports:
-      - "${DB_PORT:-5432}:5432"
+      - "${DB_PORT:-5433}:5432"
     volumes:
       # Скрипты из db/ выполняются по порядку имён только при первом запуске, пока база пустая.
       # После изменения скриптов пересоздайте базу: docker compose down -v && docker compose up -d
