@@ -169,6 +169,7 @@ docker compose exec db pg_dump -U postgres -Fc app > backup.dump
 
 Для создания резервной копии используется утилита `pg_dump`. Для восстановления — `pg_restore`. Скрипты находятся в папке `scripts/backup_restore.sh`.
 
+
 **Создание бэкапа:**
 ```bash
 docker compose exec -T db pg_dump -U postgres -Fc app > backup.dump
