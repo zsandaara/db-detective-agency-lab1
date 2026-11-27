@@ -30,4 +30,4 @@ INSERT INTO evidence (description, evidence_type, case_id) VALUES ('Странн
 
 -- 3. Нарушение FOREIGN KEY: пытаемся создать дело для несуществующего клиента
 -- expect: error fk
-INSERT INTO cases (title, description, client_id, detective_id) VALUES ('Дело-призрак', 'Описание', 999, 1);
+INSERT INTO cases (title, description, client_id, detective_id) VALUES ('Дело-призрак', 'Описание', 9999, 1);
